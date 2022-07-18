@@ -2,6 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:hauxe/theme/custom_colors.dart';
 import 'package:hauxe/screens/register_screen.dart';
+import 'package:hauxe/screens/forgot_password.dart';
 import 'package:hauxe/screens/user_info_screen.dart';
 import 'package:hauxe/utils/authentication.dart';
 import 'package:hauxe/utils/validator.dart';
@@ -67,6 +68,22 @@ class _SignInFormState extends State<SignInForm> {
                   label: 'Password',
                   hint: 'Enter your password',
                 ),
+                InkWell(
+                  onTap: () {
+                    Navigator.of(context).pushReplacement(
+                      MaterialPageRoute(
+                        builder: (context) => ForgotPasswordScreen(),
+                      ),
+                    );
+                  },
+                  child: Text(
+                    'Don\'t have an account? Sign up',
+                    style: TextStyle(
+                      color: CustomColors.firebaseOrange,
+                      letterSpacing: 0.5,
+                    ),
+                  ),
+                )
               ],
             ),
           ),
@@ -151,7 +168,7 @@ class _SignInFormState extends State<SignInForm> {
             child: Text(
               'Don\'t have an account? Sign up',
               style: TextStyle(
-                color: CustomColors.firebaseGrey,
+                color: CustomColors.firebaseOrange,
                 letterSpacing: 0.5,
               ),
             ),

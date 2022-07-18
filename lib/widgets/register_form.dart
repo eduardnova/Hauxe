@@ -163,7 +163,7 @@ class _RegisterFormState extends State<RegisterForm> {
                       child: Padding(
                         padding: EdgeInsets.only(top: 16.0, bottom: 16.0),
                         child: Text(
-                          'REGISTER',
+                          'Register',
                           style: TextStyle(
                             fontSize: 24,
                             fontWeight: FontWeight.bold,
