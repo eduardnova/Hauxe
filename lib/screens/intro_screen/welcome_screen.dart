@@ -20,7 +20,7 @@ class WelcomeScreen extends StatelessWidget {
             fit: BoxFit.cover,
           ),
         ),
-        margin: const EdgeInsets.all(8),
+        margin: const EdgeInsets.all(0),
         width: size.width,
         height: size.height,
         child: Column(
