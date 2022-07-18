@@ -6,5 +6,6 @@ class CustomColors {
   static final Color firebaseAmber = Color(0xFF178bff);
   static final Color firebaseYellow = Color(0xff145ff4);
   static final Color firebaseGrey = Color(0xFFFFFFFF);
+  static final Color firebaseLightGrey = Color(0xFFFFFFFF);
   static final Color googleBackground = Color(0xFFFF5ff4);
 }

@@ -12,15 +12,15 @@ class WelcomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
     return Scaffold(
-      backgroundColor: Colors.white,
       body: Container(
+        padding: const EdgeInsets.all(0),
         decoration: const BoxDecoration(
           image: DecorationImage(
             image: AssetImage("assets/welcome.jpg"),
             fit: BoxFit.cover,
           ),
         ),
-        margin: const EdgeInsets.all(8),
+        margin: const EdgeInsets.all(0),
         width: size.width,
         height: size.height,
         child: Column(

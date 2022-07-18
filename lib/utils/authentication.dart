@@ -93,6 +93,29 @@ class Authentication {
     return user;
   }
 
+  // FireBase Reset Password Method
+  static Future resetPassword({required String email, required BuildContext context}) async {
+    try {
+      await FirebaseAuth.instance.sendPasswordResetEmail(email: email.trim());
+
+      /// Showing Message That user enters email correctly and reset password will be sent
+      ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+        content: Text("Password reset link sent! Check your Email"),
+      ));
+
+      /// After 2 seconds we automatically pop forgot screen
+      Future.delayed(const Duration(seconds: 2), () => Navigator.pop(context));
+
+      ///
+    } on FirebaseAuthException catch (e) {
+      // ignore: avoid_print
+      print(e);
+
+      /// Showing Error with SnackBar if the user enter the wrong Email or Enter nothing
+      ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(e.message.toString())));
+    }
+  }
+
   static Future<User?> refreshUser(User user) async {
     FirebaseAuth auth = FirebaseAuth.instance;
 
